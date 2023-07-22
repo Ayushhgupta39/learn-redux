@@ -96,3 +96,15 @@ console.log(store.getState())
 **You can think of `dispatching actions` as "triggering an event" in the application. Something happened, and we want the store to know about it. `Reducers` act like event listeners, and when they hear an action they are interested in, they update the state in response.**
 
 **Actions are like "State changers here.**
+
+
+#### Selectors
+**Selectors** are functions that know how to extract specific pieces of information from a store state value. As an application grows bigger, this can help avoid repeating logic as different parts of the app need to read the same data:
+
+```
+const selectCounterValue = state => state.value
+
+const currentValue = selectCounterValue(store.getState())
+console.log(currentValue)
+// 2
+```

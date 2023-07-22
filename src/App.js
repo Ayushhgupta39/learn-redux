@@ -1,36 +1,17 @@
-
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const obj = {
-    a: {
-      b: 3,
-      c: 6,
-      d: 9
-    }
-  };
-
-  const obj2 = {
-    ...obj,
-    a: {
-      ...obj.a,
-      b: "Changed"
-    }
-  }
-
-  const obj3 = {
-    ...obj,
-    a: {
-      b: "Changed"
-    }
-  }
-
-  console.log("Obj2: ", obj2)
-  console.log("Obj3: ", obj3)
+  const [count, setCount] = useState(0);
   return (
     <div className="App">
-     <h1>Learn Redux</h1>
-
+      <h1>Learn Redux</h1>
+      <h3>Counter</h3>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <button>Increment</button>
+          {count}
+        <button>Decrement</button>
+      </div>
     </div>
   );
 }
